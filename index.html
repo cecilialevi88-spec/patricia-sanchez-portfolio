@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patricia Sánchez Fernández — Recursos Humanos</title>
+<meta name="description" content="Portfolio profesional de Patricia Sánchez Fernández, Ejecutiva de Recursos Humanos con 25+ años de trayectoria en LATAM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A2420;
+    --ink-soft:#3C4A44;
+    --paper:#EDEFEA;
+    --panel:#E1E6DE;
+    --line:#C9CFC4;
+    --amber:#B8862E;
+    --teal:#3E655C;
+    --white:#FBFBF9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(237,239,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:18px;
+    letter-spacing:0.2px;
+  }
+  .navlinks{display:flex; gap:28px; font-size:14px;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); border-bottom:1px solid transparent; padding-bottom:2px;}
+  .navlinks a:hover{border-color:var(--amber); color:var(--ink);}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:88px 0 64px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .kicker{
+    font-size:15px; color:var(--teal); font-weight:600; margin-bottom:18px;
+  }
+  h1.title{
+    font-size:44px;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  .lede{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+  .hero-meta{
+    border-left:2px solid var(--amber);
+    padding-left:20px;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .hero-meta p{margin:0 0 10px;}
+  .hero-meta a{text-decoration:none; color:var(--teal); font-weight:600;}
+  .avatar{
+    width:112px; height:112px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 15%;
+    background:var(--panel);
+    border:3px solid var(--amber);
+    margin-bottom:22px;
+    display:block;
+  }
+  .cta-row{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:2px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--white);}
+  .btn-primary:hover{background:var(--teal);}
+  .btn-outline{border:1px solid var(--ink); color:var(--ink);}
+  .btn-outline:hover{border-color:var(--amber); color:var(--amber);}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    h1.title{font-size:32px;}
+  }
+
+  /* ---------- STATS ---------- */
+  .stats{
+    background:var(--ink);
+    color:var(--white);
+    padding:52px 0;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:32px;
+  }
+  .stat-num{
+    font-family:'Fraunces', serif;
+    font-size:38px;
+    font-weight:600;
+    color:#E7C889;
+  }
+  .stat-label{
+    font-size:13px;
+    color:#C9D2CB;
+    margin-top:6px;
+    max-width:22ch;
+  }
+  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr); row-gap:36px;} }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:72px 0;}
+  .section-head{
+    display:flex; align-items:baseline; gap:16px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  .section-num{font-size:14px; color:var(--amber); font-weight:600; font-variant-numeric:tabular-nums;}
+  h2.section-title{font-size:26px;}
+
+  /* ---------- POSICIONAMIENTO ---------- */
+  .focus-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .focus-card{
+    background:var(--panel);
+    padding:24px 22px;
+    border-top:3px solid var(--teal);
+  }
+  .focus-card h3{font-size:18px; margin-bottom:10px;}
+  .focus-card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+  @media (max-width:760px){ .focus-grid{grid-template-columns:1fr;} }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px;
+    width:1px; background:var(--line);
+  }
+  .role{position:relative; padding-bottom:38px;}
+  .role:last-child{padding-bottom:0;}
+  .role::before{
+    content:""; position:absolute; left:-28px; top:6px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--amber);
+  }
+  .role-dates{font-size:13px; color:var(--teal); font-weight:600; letter-spacing:0.2px;}
+  .role-title{font-size:19px; margin-top:4px;}
+  .role-org{color:var(--ink-soft); font-weight:500;}
+  .role ul{margin:12px 0 0; padding-left:18px;}
+  .role li{font-size:14.5px; color:var(--ink-soft); margin-bottom:6px;}
+
+  /* ---------- TWO COL (educación/certificaciones) ---------- */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .two-col h3{font-size:16px; margin-bottom:14px; color:var(--teal);}
+  .two-col ul{margin:0; padding-left:18px;}
+  .two-col li{font-size:14.5px; margin-bottom:10px; color:var(--ink-soft);}
+  @media (max-width:760px){ .two-col{grid-template-columns:1fr; gap:28px;} }
+
+  /* ---------- SKILLS ---------- */
+  .chip-group{margin-bottom:26px;}
+  .chip-group h3{font-size:14px; color:var(--teal); margin-bottom:12px; font-family:'Work Sans',sans-serif; font-weight:600;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:13px;
+    padding:7px 14px;
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer.contact{
+    background:var(--ink);
+    color:var(--white);
+    padding:72px 0 40px;
+  }
+  footer.contact h2{color:var(--white); font-size:30px; max-width:20ch;}
+  footer.contact p{color:#C9D2CB; margin-top:16px; max-width:50ch;}
+  .contact-row{margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;}
+  .contact-row .btn-primary{background:#E7C889; color:var(--ink);}
+  .contact-row .btn-primary:hover{background:var(--white);}
+  .contact-row .btn-outline{border-color:#8FA79E; color:#E9ECE7;}
+  .foot-credit{
+    margin-top:56px; padding-top:22px; border-top:1px solid #37423C;
+    font-size:12.5px; color:#8FA79E;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Patricia Sánchez Fernández</div>
+    <div class="navlinks">
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#educacion">Educación</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Recursos Humanos · Estrategia y Desarrollo Organizacional</div>
+      <h1 class="title">25 años escalando equipos y culturas de alto crecimiento en LATAM.</h1>
+      <p class="lede">Lideré la función de RR.HH. en compañías de dispositivos médicos, tecnología y e-commerce, llevando operaciones de 200 a más de 2.300 colaboradores. Hoy combino esa experiencia ejecutiva con consultoría y coaching a equipos directivos.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/patricia-sanchez-fernandez" target="_blank" rel="noopener">Ver perfil de LinkedIn</a>
+        <a class="btn btn-outline" href="mailto:sanchez.patt@gmail.com">Escribirme</a>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <img class="avatar" src="foto.png" alt="Patricia Sánchez Fernández">
+      <p>Las Nubes, Coronado<br>San José, Costa Rica</p>
+      <p><a href="mailto:sanchez.patt@gmail.com">sanchez.patt@gmail.com</a></p>
+      <p>+506 7208-4894</p>
+      <p>Español (nativo) · Inglés C1</p>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div>
+      <div class="stat-num">1.050%</div>
+      <div class="stat-label">crecimiento de headcount acompañado (200 → 2.300 colaboradores)</div>
+    </div>
+    <div>
+      <div class="stat-num">48 hs</div>
+      <div class="stat-label">ciclo de reclutamiento, reducido desde 2–3 semanas</div>
+    </div>
+    <div>
+      <div class="stat-num">20%</div>
+      <div class="stat-label">menos rotación mediante estrategias de retención focalizadas</div>
+    </div>
+    <div>
+      <div class="stat-num">97%</div>
+      <div class="stat-label">retención de talento clave durante una crisis económica</div>
+    </div>
+  </div>
+</div>
+
+<section id="posicionamiento">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Dónde puedo aportar más</h2>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <h3>RR.HH. Regional</h3>
+        <p>Gestión del talento, relaciones laborales, desarrollo organizacional y cumplimiento normativo en industrias reguladas (dispositivos médicos, farma/biotech) a escala LATAM.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Talento y Cultura</h3>
+        <p>Arquitectura cultural, marca empleadora, retención y engagement en compañías de tecnología y servicios de alto crecimiento multi-país.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Estrategia de RR.HH. y DEI</h3>
+        <p>Liderazgo de la función completa de RR.HH., desarrollo organizacional y escalamiento de operaciones en procesos de expansión acelerada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trayectoria">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Trayectoria profesional</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="role">
+        <div class="role-dates">Abril 2026 – Agosto 2026</div>
+        <div class="role-title">Coach Profesional, Mentora y Consultora de Recursos Humanos</div>
+        <div class="role-org">Práctica Independiente</div>
+        <ul>
+          <li>Diseñó manuales estandarizados de descripciones de puesto (ISO 9001:2015) para 2 compañías tecnológicas.</li>
+          <li>Coaching individual y grupal a equipos directivos en liderazgo, negociación y planificación de sucesión.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-dates">Marzo 2014 – Marzo 2026 · 12 años</div>
+        <div class="role-title">Directora Senior de Recursos Humanos</div>
+        <div class="role-org">Terumo Neuro Costa Rica</div>
+        <ul>
+          <li>Escaló la operación de RR.HH. un 1.050% (de 200 a 2.300 colaboradores), liderando un equipo de 20 profesionales.</li>
+          <li>Logró la certificación "Best Place to Work" (2022) y redujo el ciclo de reclutamiento a 48 horas.</li>
+          <li>Lanzó el "Door to the Future Program", generando empleo para personas en situación de pobreza extrema.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-dates">Noviembre 2012 – Marzo 2014</div>
+        <div class="role-title">Socia Estratégica Senior de Recursos Humanos</div>
+        <div class="role-org">Amazon Support Services S.R.L.</div>
+        <ul>
+          <li>Redujo la rotación de empleados en 20% mediante estrategias de retención focalizadas.</li>
+          <li>Diseñó y lanzó la nueva estructura del rol de Team Leader.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-dates">Julio 2005 – Octubre 2012</div>
+        <div class="role-title">Directora Senior, Desarrollo Humano</div>
+        <div class="role-org">Península Papagayo</div>
+        <ul>
+          <li>Construyó el área de Desarrollo Humano desde cero; redujo accidentes laborales en 50%.</li>
+          <li>Recibió el Premio AMCHAM de Responsabilidad Social Corporativa (2010).</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-dates">1996 – 2005</div>
+        <div class="role-title">Administradora Regional de RR.HH. y Nómina</div>
+        <div class="role-org">Productos Roche S.A. · Roche Servicios S.A. · Acer Information Services (hoy Sykes)</div>
+        <ul>
+          <li>Implementó el sistema de evaluación de puestos Hay Group y estandarizó la nómina para Centroamérica y el Caribe.</li>
+          <li>Redujo los errores de nómina de 25% a 0,25% mediante mejora de procesos.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="educacion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Educación y certificaciones</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>Educación</h3>
+        <ul>
+          <li>Máster en Liderazgo y Coaching Ejecutivo — Universidad de Barcelona / OBS Business School</li>
+          <li>Máster en Administración de Empresas (Cum Laude), énfasis en RR.HH. — ULACIT</li>
+          <li>Diploma en Diseño Organizacional — LATAM Business School</li>
+          <li>Licenciatura en Administración de Empresas, énfasis en RR.HH. — Universidad Interamericana de Costa Rica</li>
+          <li>Máster en Psicología Organizacional — Universidad Autónoma de Costa Rica (en curso)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certificaciones y cursos</h3>
+        <ul>
+          <li>Certificación de dominio del inglés — Cambridge Institute & Dekalb College, Atlanta</li>
+          <li>Metodología Hay Group para Evaluación de Puestos</li>
+          <li>Metodología Kepner &amp; Tregoe de Análisis de Problemas</li>
+          <li>Programa de Liderazgo en Recursos Humanos — INCAE</li>
+          <li>Introducción a la Computación Cuántica — IBM Quantum (2023)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Habilidades</h2>
+    </div>
+
+    <div class="chip-group">
+      <h3>Técnicas</h3>
+      <div class="chips">
+        <span class="chip">Adquisición de Talento</span>
+        <span class="chip">Relaciones Laborales</span>
+        <span class="chip">Compensación y Beneficios</span>
+        <span class="chip">Gestión del Desempeño</span>
+        <span class="chip">Planificación de Sucesión</span>
+        <span class="chip">Desarrollo Organizacional</span>
+        <span class="chip">Cultura y Marca Empleadora</span>
+        <span class="chip">Retención y Engagement</span>
+        <span class="chip">HRIS y Nómina</span>
+        <span class="chip">Cumplimiento Regional (LATAM/Caribe)</span>
+        <span class="chip">ISO 9001:2015</span>
+      </div>
+    </div>
+
+    <div class="chip-group">
+      <h3>Blandas</h3>
+      <div class="chips">
+        <span class="chip">Liderazgo Estratégico</span>
+        <span class="chip">Coaching Ejecutivo</span>
+        <span class="chip">Comunicación e Influencia</span>
+        <span class="chip">Negociación de Alto Impacto</span>
+        <span class="chip">Resolución de Conflictos</span>
+        <span class="chip">Adaptabilidad</span>
+      </div>
+    </div>
+
+    <div class="chip-group">
+      <h3>Idiomas</h3>
+      <div class="chips">
+        <span class="chip">Español — Nativo</span>
+        <span class="chip">Inglés — C1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="contact" id="contacto">
+  <div class="wrap">
+    <h2>Conversemos sobre tu próximo desafío de talento.</h2>
+    <p>Disponible para consultoría estratégica, coaching ejecutivo y roles de liderazgo en Recursos Humanos.</p>
+    <div class="contact-row">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/patricia-sanchez-fernandez" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-outline" href="mailto:sanchez.patt@gmail.com">sanchez.patt@gmail.com</a>
+      <a class="btn btn-outline" href="tel:+50672084894">+506 7208-4894</a>
+    </div>
+    <div class="foot-credit">
+      <span>© 2026 Patricia Sánchez Fernández</span>
+      <span>Perfil elaborado con Consulting CL</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
